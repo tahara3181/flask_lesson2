@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block header %}
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">画像判定アプリ</h1>
+        <p class="lead">アップした画像が10種類のグループのどれに属するかを判定します。</p>
+        <hr class="my-4">
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <form method="post" , enctype="multipart/form-data" , action="/result">
+        <div class="custom-file mb-5">
+            <input type="file" name="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile"></label>
+        </div>
+        <div><input type="submit", value="判　定", class="btn btn-secondary btn-lg btn-block" ></div>
+    </form>
+</div>
+{% endblock %}

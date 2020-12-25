@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block header %}
+<div class="jumbotron">
+	<div class="container">
+  <h1 class="display-4">判定結果</h1>
+	</div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <p><img src="{{filepath}}"></p>
+    <ol>
+       {% for item in result %}
+    	<li>{{ item[1] }}である確率が{{ '%0.2f'| format(item[2]*100) }}%</li>
+    	{% endfor %}
+    </ol>
+    <form method="get" action="/">
+      <button class="submit">戻る</button>
+    </form>
+  </div>
+{% endblock %}
